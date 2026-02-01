@@ -40,7 +40,7 @@
   <div style="max-width:640px; margin:0 auto; background:#ffffff; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.08); overflow:hidden;">
     <%- include('header', { siteData }) %>
 
-    <div style="padding:22px 22px 8px;">
+    <div style="padding:22px 16px 8px;">
     <h2 style="margin:0 0 12px; font-size:20px; font-weight:600; color:#1F2937;">BOOKING RECEIVED!!</h2>
       <p style="margin:0 0 14px; font-size:15px; color:#6B7280; font-weight: 400; line-height:1.55;">
         Dear <strong style="font-weight: 600;"><%= fullName %></strong>,<br />
@@ -108,7 +108,7 @@
             <td style="padding:14px 16px; font-size:15px; color:#374151; font-weight:700;">Total</td>
             <td style="padding:14px 16px; font-size:15px; color:#374151; font-weight:700; text-align:right;">$<%= total %>
               <% if ((paymentStatus).toString().toLowerCase() === 'pending') { %>
-              <span style="color:#b12704; ">( Not Paid )</span>
+              <span style="color:#C30E0E; ">( Not Paid )</span>
               <% } %>
             </td>
           </tr>
@@ -117,7 +117,7 @@
 
       <table width="100%" cellpadding="0" cellspacing="0" role="presentation" >
         <tr>
-          <td style="padding:12px 12px; color:#333; font-size: 16px;">❗<strong style="font-weight: 600;">Important Note: </strong>The final cost may vary based on customization, taxes, tips, or additional materials.
+          <td style="padding:12px 12px; color:#333; font-size: 16px;"><strong style="font-weight: 600;">Important Note: </strong>The final cost may vary based on customization, taxes, tips, or additional materials.
           </td>
         </tr>
       </table>

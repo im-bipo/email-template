@@ -1,0 +1,552 @@
+const booking = {
+  "booking-id": "B-006",
+  "full-name": "Cheryl Murphy",
+  email: "waho@mailinator.com",
+  "phone-number": "+1 (741) 999-1836",
+  "how-did-you-hear-about-us": "",
+  "appointment-details": [
+    {
+      category: "Waxing",
+      services: "Waxing",
+      "staff-id": "39",
+      "staff-name": "Linda",
+      date: "2026-01-09",
+      time: "10:00",
+      duration: 60,
+      cost: 45,
+    },
+    {
+      category: "Hair Cut",
+      services: "Fade Cut",
+      "staff-id": "36",
+      "staff-name": "Ram",
+      date: "2026-01-09",
+      time: "11:00",
+      duration: 60,
+      cost: 20,
+    },
+  ],
+  currency: "USD",
+  "booking-status": "confirmed",
+  "payment-status": "pending",
+  subtotal: 65,
+  "discount-percent": 0,
+  "discount-amount": 0,
+  "tax-percent": 0,
+  "tax-amount": 0,
+  total: 65,
+};
+
+const siteDataMap = {
+  "fe340ac4-0e6b-4768-ab44-cb86ca600732": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["amorgan@amdsremodeling.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "General",
+      siteLogo:
+        "https://amdsremodeling.orderq.store/wp-content/uploads/2025/08/amds-logo.png",
+      siteName: "AMDS Remodeling",
+      siteEmail: "amorgan@amdsremodeling.com",
+      sitePhone: "19199717212",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#144276",
+      secondary: "#8B0709",
+      gradiant: ["", ""],
+    },
+  },
+  "7dd5857c-730e-471d-986c-ec8a0afc3c7d": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["asianclothing@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "Woocommerce",
+      siteLogo:
+        "https://asianclothingandbeauty.com/wp-content/uploads/2025/11/Frame-1.png",
+      siteName: "Asian Clothing Store",
+      siteEmail: "asianclothing@gmail.com",
+      sitePhone: "13312345678",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#FF1493",
+      secondary: "",
+      gradiant: ["", ""],
+    },
+  },
+  "cc516b85-ac98-4489-9d91-f1782032d449": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["asianclothing@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "Salon",
+      siteLogo:
+        "https://asianclothingandbeauty.com/wp-content/uploads/2025/11/Frame-1.png",
+      siteName: "Asian Clothing & Beauty Salon",
+      siteEmail: "asianclothing@gmail.com",
+      sitePhone: "13312345678",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#FF1493",
+      secondary: "",
+      gradiant: ["", ""],
+    },
+  },
+  "a1768831-a031-4cd3-b965-2bdb374a3c04": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["assist.bestchoicerestorationllc@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "General",
+      siteLogo:
+        "https://bestchoiceroofingnc.com/wp-content/uploads/2025/07/Best-choice-restoration-logo-1-300x162.webp",
+      siteName: "Best Choice Restorations",
+      siteEmail: "assist.bestchoicerestorationllc@gmail.com",
+      sitePhone: "19843327199",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#ED3D48",
+      secondary: "#3B6990",
+      gradiant: ["", ""],
+    },
+  },
+  "25b6fd4a-9ae5-474e-983f-817bd2573616": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["beautynbrowsbysona@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "Salon",
+      siteLogo:
+        "https://browsbysona.com/wp-content/uploads/2025/03/cropped-browsbysona-300x300.webp",
+      siteName: "Brows By Sona",
+      siteEmail: "beautynbrowsbysona@gmail.com",
+      sitePhone: "16172309114",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#9A844A",
+      secondary: "",
+      gradiant: ["#DBC56BC4", "#A68B49"],
+    },
+  },
+  "a467c65f-3654-4e74-b03b-cadbdeaf73f6": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["fbilal09@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "Woocommerce",
+      siteLogo:
+        "https://cleopatraboutiqueusa.com/wp-content/uploads/2025/11/bgrm.png",
+      siteName: "Cleopatra Boutique",
+      siteEmail: "fbilal09@gmail.com",
+      sitePhone: "13368980893",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#E8B236",
+      secondary: "",
+      gradiant: ["", ""],
+    },
+  },
+  "33634aa5-9a57-4659-a4cd-379ae64727ec": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["triadnepalesecommunitycenter@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "General",
+      siteLogo:
+        "https://hamrotncc.orderq.store/wp-content/uploads/2021/05/logo.png",
+      siteName: "Hamro Tncc",
+      siteEmail: "triadnepalesecommunitycenter@gmail.com",
+      sitePhone: "13363659857",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#1A3E78",
+      secondary: "#B31A1B",
+      gradiant: ["", ""],
+    },
+  },
+  "172cbcb8-0645-45de-b42e-1cf37fd280cb": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["markhorhvacr@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "General",
+      siteLogo:
+        "https://markhorhvac.com/wp-content/uploads/2025/06/Logo-without-bg.svg",
+      siteName: "Markhor HVAC",
+      siteEmail: "markhorhvacr@gmail.com",
+      sitePhone: "13363466665",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#FF5501",
+      secondary: "#2784D1",
+      gradiant: ["", ""],
+    },
+  },
+  "3856f297-ad85-4205-a7d1-b51ac6f99ede": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["numiskinspa@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "Salon",
+      siteLogo:
+        "https://www.numiskinspa.com/wp-content/uploads/2025/10/numi-skin-spa.webp",
+      siteName: "Numi Skin Spa",
+      siteEmail: "numiskinspa@gmail.com",
+      sitePhone: "13364915134",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#F1D0BB",
+      secondary: "",
+      gradiant: ["", ""],
+    },
+  },
+  "66ac9c18-dab9-463f-ba87-a8fce44f59e2": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["tmlo2021llc@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "General",
+      siteLogo:
+        "https://tmloservices.com/wp-content/uploads/2025/07/TMLO-Logo.svg",
+      siteName: "TMLO Services LLC",
+      siteEmail: "tmlo2021llc@gmail.com",
+      sitePhone: "13362108750",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#2E3F80",
+      secondary: "",
+      gradiant: ["", ""],
+    },
+  },
+  "24a4bbc6-25a8-437e-b073-31bbf190ad1f": {
+    notifications: {
+      from: "",
+      to: [],
+      cc: ["eyebrowthreading2022@gmail.com"],
+      bcc: [],
+      subject: "",
+      footerMessage: "",
+      alert: ["Email", "SMS", "WhatsApp"],
+    },
+    site: {
+      siteType: "Salon",
+      siteLogo:
+        "https://shilabrows.com/wp-content/uploads/2025/03/shila-logo-300x126.webp",
+      siteName: "Shila Brows & Beauty",
+      siteEmail: "eyebrowthreading2022@gmail.com",
+      sitePhone: "13368758017",
+      poweredBy: "Esrijana",
+    },
+    color: {
+      primary: "#205B4F",
+      secondary: "#D50D0F",
+      gradiant: ["", ""],
+    },
+  },
+};
+
+const form = {
+  form_id: "102",
+  fields: {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    "new-field": "",
+  },
+};
+
+const woocommerce = {
+  headers: {
+    accept: "*/*",
+    "accept-encoding": "deflate, gzip",
+    "content-length": "3785",
+    "content-type": "application/json",
+    host: "ns5vlcqhcf.execute-api.ap-south-1.amazonaws.com",
+    "user-agent": "WooCommerce/10.4.3 Hookshot (WordPress/6.9)",
+    "x-amzn-trace-id": "Root=1-695aa867-0c7c205c7593fac7633560a9",
+    "x-forwarded-for": "103.182.174.82",
+    "x-forwarded-port": "443",
+    "x-forwarded-proto": "https",
+    "x-wc-webhook-delivery-id": "775c535f911785a6c65af4fca05cd428",
+    "x-wc-webhook-event": "created",
+    "x-wc-webhook-id": "1",
+    "x-wc-webhook-resource": "order",
+    "x-wc-webhook-signature": "xhRBdUTxXATgzctZ8aGCRdyTpeDEhtYV9CPOGRQIU3w=",
+    "x-wc-webhook-source": "http://plugin-repo.local/",
+    "x-wc-webhook-topic": "order.created",
+    "custom-static-data": "value",
+  },
+  body: {
+    id: 100,
+    parent_id: 0,
+    status: "processing",
+    currency: "USD",
+    version: "10.4.3",
+    prices_include_tax: false,
+    date_created: "2026-01-04T23:35:14",
+    date_modified: "2026-01-04T23:35:17",
+    discount_total: "0.00",
+    discount_tax: "0.00",
+    shipping_total: "0.00",
+    shipping_tax: "0.00",
+    cart_tax: "0.00",
+    total: "40.88",
+    total_tax: "0.00",
+    customer_id: 1,
+    order_key: "wc_order_PIbAi78w4Roz9",
+    billing: {
+      first_name: "h",
+      last_name: "h",
+      company: "",
+      address_1: "h",
+      address_2: "",
+      city: "n",
+      state: "NY",
+      postcode: "10001",
+      country: "US",
+      email: "dev-email@wpengine.local",
+      phone: "",
+    },
+    shipping: {
+      first_name: "h",
+      last_name: "h",
+      company: "",
+      address_1: "h",
+      address_2: "",
+      city: "n",
+      state: "NY",
+      postcode: "10001",
+      country: "US",
+      phone: "",
+    },
+    payment_method: "cod",
+    payment_method_title: "Cash on delivery",
+    transaction_id: "",
+    customer_ip_address: "::1",
+    customer_user_agent:
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:146.0) Gecko/20100101 Firefox/146.0",
+    created_via: "store-api",
+    customer_note: "",
+    date_completed: null,
+    date_paid: null,
+    cart_hash: "ce094fb324d6156a281316a13ca8c7d0",
+    number: "100",
+    meta_data: [
+      {
+        id: 127,
+        key: "_coupons_hash",
+        value: "d751713988987e9331980363e24189ce",
+      },
+      {
+        id: 150,
+        key: "_debug_log_source_pending_deletion",
+        value: "place-order-debug-7f86f08d",
+      },
+      {
+        id: 128,
+        key: "_fees_hash",
+        value: "d751713988987e9331980363e24189ce",
+      },
+      {
+        id: 126,
+        key: "_shipping_hash",
+        value: "64656d37dd2ad316b3e09febf0b4dff2",
+      },
+      {
+        id: 129,
+        key: "_taxes_hash",
+        value: "d751713988987e9331980363e24189ce",
+      },
+      {
+        id: 144,
+        key: "_wc_order_attribution_device_type",
+        value: "Desktop",
+      },
+      {
+        id: 137,
+        key: "_wc_order_attribution_referrer",
+        value:
+          "http://plugin-repo.local/wp-admin/admin.php?page=wc-settings&tab=site-visibility",
+      },
+      {
+        id: 142,
+        key: "_wc_order_attribution_session_count",
+        value: "1",
+      },
+      {
+        id: 139,
+        key: "_wc_order_attribution_session_entry",
+        value: "http://plugin-repo.local/shop/",
+      },
+      {
+        id: 141,
+        key: "_wc_order_attribution_session_pages",
+        value: "53",
+      },
+      {
+        id: 140,
+        key: "_wc_order_attribution_session_start_time",
+        value: "2026-01-04 16:37:20",
+      },
+      {
+        id: 136,
+        key: "_wc_order_attribution_source_type",
+        value: "typein",
+      },
+      {
+        id: 143,
+        key: "_wc_order_attribution_user_agent",
+        value:
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:146.0) Gecko/20100101 Firefox/146.0",
+      },
+      {
+        id: 138,
+        key: "_wc_order_attribution_utm_source",
+        value: "(direct)",
+      },
+      {
+        id: 130,
+        key: "is_vat_exempt",
+        value: "no",
+      },
+    ],
+    line_items: [
+      {
+        id: 19,
+        name: "Soluta.",
+        product_id: 88,
+        variation_id: 0,
+        quantity: 1,
+        tax_class: "",
+        subtotal: "40.88",
+        subtotal_tax: "0.00",
+        total: "40.88",
+        total_tax: "0.00",
+        taxes: [],
+        meta_data: [],
+        sku: "",
+        global_unique_id: "",
+        price: 40.88,
+        image: {
+          id: "89",
+          src: "http://plugin-repo.local/wp-content/uploads/2026/01/wp_dummy_content_generator_88.jpg",
+        },
+        parent_name: null,
+      },
+    ],
+    tax_lines: [],
+    shipping_lines: [],
+    fee_lines: [],
+    coupon_lines: [],
+    refunds: [],
+    payment_url:
+      "http://plugin-repo.local/checkout/order-pay/100/?pay_for_order=true&key=wc_order_PIbAi78w4Roz9",
+    is_editable: false,
+    needs_payment: false,
+    needs_processing: true,
+    date_created_gmt: "2026-01-04T17:50:14",
+    date_modified_gmt: "2026-01-04T17:50:17",
+    date_completed_gmt: null,
+    date_paid_gmt: null,
+    currency_symbol: "$",
+    _links: {
+      self: [
+        {
+          href: "http://plugin-repo.local/wp-json/wc/v3/orders/100",
+          targetHints: {
+            allow: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+          },
+        },
+      ],
+      collection: [
+        {
+          href: "http://plugin-repo.local/wp-json/wc/v3/orders",
+        },
+      ],
+      email_templates: [
+        {
+          embeddable: true,
+          href: "http://plugin-repo.local/wp-json/wc/v3/orders/100/actions/email_templates",
+        },
+      ],
+      customer: [
+        {
+          href: "http://plugin-repo.local/wp-json/wc/v3/customers/1",
+        },
+      ],
+    },
+  },
+};
+
+export { booking, siteDataMap, form, woocommerce };

@@ -1,0 +1,41 @@
+<%
+	const sd = siteData || {};
+	const site = sd.site || {};
+	const notifications = sd.notifications || {};
+	const name = site.siteName || site.name || '-';
+	const phone = site.sitePhone || site.phone || '';
+	const email = site.siteEmail || site.email || '';
+	const footerMessage = notifications.footerMessage || '';
+	const poweredBy = sd.poweredBy || 'eSrijana';
+%>
+
+<table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff; border-top:1px solid #f0f1f3;">
+	<tr>
+		<td align="center" style="padding:18px 16px;">
+			<table width="520" cellpadding="0" cellspacing="0" role="presentation" style="margin:0 auto; text-align:center;">
+				<tr>
+					<td style="padding-bottom:12px;">
+						<div style="font-size:14px; color:#374151; font-weight:700; margin-bottom:8px;"><%= name %></div>
+						<div style="font-size:13px; color:#6b7280; margin-bottom:12px;">Thank you for choosing our service.</div>
+						<div style="font-size:13px; color:#4b5563; margin-bottom:12px;">
+							<% if (phone) { %>
+								<span><%= phone %></span>
+							<% } %>
+							<% if (phone && email) { %>
+								<span style="color:#e6e9ee; margin:0 8px;">|</span>
+							<% } %>
+							<% if (email) { %>
+								<span><a href="mailto:<%= email %>" style="color:#4b5563; text-decoration:none;"><%= email %></a></span>
+							<% } %>
+						</div>
+						<% if (footerMessage) { %>
+							<div style="font-size:12px; color:#9ca3af; margin-bottom:12px;"><%= footerMessage %></div>
+						<% } %>
+						<div style="font-size:12px; color:#9ca3af; margin-bottom:8px;">© <%= new Date().getFullYear() %> <%= name %>. All rights reserved.</div>
+						<div style="font-size:11px; color:#c1c5ca; margin-top:10px;">Powered by <%= poweredBy %></div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

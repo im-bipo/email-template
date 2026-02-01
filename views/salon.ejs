@@ -1,0 +1,130 @@
+  <% 
+        const sd = siteData || {};
+        const site = sd.site || {};
+        const colors = sd.color || {};
+        const grad = colors.gradiant || [];
+        const primary = colors.primary || '#9A844A';
+        const secondary = colors.secondary || '#A68B49';
+        const g1 = grad[0] || primary;
+        const g2 = grad[1] || secondary;
+        const siteName = site.siteName || site.name || '-';
+        const logoSrc = site.logo || site.siteLogo || null;
+
+        const bk = booking || {};
+        const appts = bk['appointment-details'] || [];
+        const bookingNumber = bk.number || bk.id || bk['booking-id'] || '-';
+        const fullName = bk['full-name'] || '-';
+        const email = bk.email || '-';
+        const phoneNumber = bk['phone-number'] || '-';
+        const heardAbout = bk['how-did-you-hear-about-us'] || '-';
+        const subtotal = bk.subtotal ?? bk['subtotal'] ?? '-';
+        const discountPercent = bk['discount-percent'] ?? bk['discountPercent'] ?? '0';
+        const discountAmount = bk['discount-amount'] ?? bk['discount'] ?? '-';
+        const taxPercent = bk['tax-percent'] ?? bk['taxPercent'] ?? '0';
+        const taxAmount = bk['tax-amount'] ?? bk['tax'] ?? '-';
+        const total = bk.total ?? bk['total'] ?? '-';
+        const paymentStatus = (bk['payment-status'] || bk['paymentStatus'] || '-').toString();
+      %>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title><%= siteData?.site?.name || 'Booking' %> | Booking Received</title>
+</head>
+
+
+<body style="margin:0; font-family:'Inter'; color:#1f2937;">
+  <div style="max-width:640px; margin:0 auto; background:#ffffff; border-radius:14px; box-shadow:0 10px 30px rgba(0,0,0,0.08); overflow:hidden;">
+    <%- include('header', { siteData }) %>
+
+    <div style="padding:22px 22px 8px;">
+    <h2 style="margin:0 0 12px; font-size:20px; font-weight:600; color:#1F2937;">BOOKING RECEIVED!!</h2>
+      <p style="margin:0 0 14px; font-size:15px; color:#6B7280; font-weight: 400; line-height:1.55;">
+        Dear <strong style="font-weight: 600;"><%= fullName %></strong>,<br />
+        Your booking has been received. Thank you for choosing your service. Please find the booking details below.
+      </p>
+
+      <div style="margin:20px 0 8px; font-size:18.5px; font-weight:700; color:<%= primary %>; border-bottom:3px solid <%= primary %>; padding-bottom:6px;">Booking Details</div>
+      <div style="border-radius:12px; background:#F9FAFB; padding:0; margin-bottom:16px; overflow:hidden;">
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;">
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:18px 16px; font-size:16px; color:#374151;">Booking Number</td>
+            <td style="padding:18px 16px; font-size:15px;"><%= booking.number || booking.id || booking['booking-id'] || '-' %></td>
+          </tr>
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:18px 16px; font-size:16px; color:#374151;">Full Name</td>
+            <td style="padding:18px 16px; font-size:15px;"><%= booking['full-name'] || '-' %></td>
+          </tr>
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:18px 16px; font-size:16px; color:#374151;">Email</td>
+            <td style="padding:18px 16px; font-size:15px;"><%= booking.email || '-' %></td>
+          </tr>
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:18px 16px; font-size:16px; color:#374151;">Phone number</td>
+            <td style="padding:18px 16px; font-size:15px;"><%= booking['phone-number'] || '-' %></td>
+          </tr>
+          <tr>
+            <td style="padding:18px 16px; font-size:16px; color:#374151;">How did you hear about us</td>
+            <td style="padding:18px 16px; font-size:15px;"><%= booking['how-did-you-hear-about-us'] || '-' %></td>
+          </tr>
+        </table>
+      </div>
+
+      <div style="margin:20px 0 8px; font-size:18.5px; font-weight:700; color:<%= siteData?.color?.primary %>; border-bottom:3px solid <%= siteData?.color?.primary %>; padding-bottom:6px;">Appointment Details</div>
+      <% if (appts.length === 0) { %>
+      <div style="border:1px solid #e5e7eb; border-radius:10px; padding:14px; background:#fdfcf8; margin-bottom:16px;">
+        <p style="margin:0; color:#6b7280;">-</p>
+      </div>
+      <% } %>
+      <% appts.forEach(function(a){ %>
+      <div style="border:1px solid #e5e7eb; border-radius:10px; padding:14px; background:#fdfcf8; margin-bottom:12px;">
+        <p style="margin:0 0 12px; font-size:14px; font-weight:700; color:#1f2937;"><%= a.services || '-' %></p>
+        <div style="display:block; font-size:13px; color:#333; margin:6px 0;"><strong style="font-weight: 500;">Staff: </strong><%= a['staff-name'] || '-' %></div>
+        <div style="display:block; font-size:13px; color:#333; margin:6px 0;"><strong style="font-weight: 500;">Date: </strong><%= a.date || '-' %></div>
+        <div style="display:block; font-size:13px; color:#333; margin:6px 0;"><strong style="font-weight: 500;">Time: </strong><%= a.time || '-' %></div>
+        <div style="display:block; font-size:13px; color:#333; margin:6px 0;"><strong style="font-weight: 500;">Duration: </strong><%= (typeof a.duration === 'number') ? (a.duration + ' mins') : (a.duration || '-') %></div>
+        <div style="display:block; font-size:13px; color:#333; margin:6px 0;"><strong style="font-weight: 500;">Cost: </strong>$<%= a.cost ?? '-' %></div>
+      </div>
+      <% }) %>
+
+      <div style="border-radius:12px; background:#F9FAFB; padding:0; margin-top:14px; overflow:hidden;">
+        <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-collapse:collapse;">
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:14px 16px; font-size:15px;">Subtotal</td>
+            <td style="padding:14px 16px; font-size:15px; text-align:right;">$<%= subtotal %></td>
+          </tr>
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:14px 16px; font-size:15px;">Discount (<%= discountPercent %>%)</td>
+            <td style="padding:14px 16px; font-size:15px; text-align:right;">$<%= discountAmount %></td>
+          </tr>
+          <tr style="border-bottom:1px solid #E5E7EB;">
+            <td style="padding:14px 16px; font-size:15px;">Tax (<%= taxPercent %>%)</td>
+            <td style="padding:14px 16px; font-size:15px; text-align:right;">$<%= taxAmount %></td>
+          </tr>
+          <tr>
+            <td style="padding:14px 16px; font-size:15px; color:#374151; font-weight:700;">Total</td>
+            <td style="padding:14px 16px; font-size:15px; color:#374151; font-weight:700; text-align:right;">$<%= total %>
+              <% if ((paymentStatus).toString().toLowerCase() === 'pending') { %>
+              <span style="color:#b12704; ">( Not Paid )</span>
+              <% } %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <table width="100%" cellpadding="0" cellspacing="0" role="presentation" >
+        <tr>
+          <td style="padding:12px 12px; color:#333; font-size: 16px;">❗<strong style="font-weight: 600;">Important Note: </strong>The final cost may vary based on customization, taxes, tips, or additional materials.
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <%- include('footer', { siteData }) %>
+  </div>
+</body>
+
+</html>
